@@ -9,7 +9,7 @@ public class HelloController {
 	
 	@RequestMapping("/hello")
 	  public String hello() {
-	    return "Hello Anbarasu, this is branch 1 !";
+	    return "Hello Anbarasu, this is chage in master branch!";
 	  }
 	
 	

@@ -21,6 +21,17 @@ pipeline {
                sh 'sh mvnw clean install'
             }
         } 
+
+        stage('Build image') {
+      steps{
+        // echo '${dockerimagename}'
+        // sh 'docker build -t ${dockerimagename}:v2 .'
+        script {
+          dockerImage = docker.build dockerimagename
+        }
+      }
+    }
+
     }
 }     
    

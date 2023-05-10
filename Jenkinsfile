@@ -26,7 +26,7 @@ pipeline {
       steps{
         // echo '${dockerimagename}'
         // sh 'docker build -t ${dockerimagename}:v2 .'
-          sh "chown root:jenkins /run/docker.sock"
+          // sh "chown root:jenkins /run/docker.sock"
         script {
           dockerImage = docker.build dockerimagename
         }

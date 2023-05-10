@@ -33,6 +33,20 @@ pipeline {
       }
     }
 
+     stage('Pushing Image') {
+
+      environment {
+               registryCredential = 'docker-hub-login'
+           }
+      steps{
+        script {
+          docker.withRegistry( 'https://registry.hub.docker.com', registryCredential ) {
+            dockerImage.push("v1")
+          }
+        }
+      }
+    }
+
     }
 }     
    

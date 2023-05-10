@@ -33,7 +33,7 @@ pipeline {
 
 
 
-     stage('Pushing Image') {
+  /*    stage('Pushing Image') {
 
       environment {
                registryCredential = 'docker-hub-login'
@@ -53,7 +53,7 @@ pipeline {
 
  script{
 
-          withKubeConfig([credentialsId: 'minikube', serverUrl: 'https://192.168.64.21:8443']) {
+          withKubeConfig([credentialsId: 'minikube', serverUrl: 'https://192.168.64.22:8443']) {
                 sh 'kubectl apply -f hello.yaml'
             }
          }
@@ -70,4 +70,6 @@ pipeline {
         }
     }   
   
-  }
+  } */
+
+}

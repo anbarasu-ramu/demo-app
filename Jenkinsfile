@@ -1,4 +1,4 @@
-pipeline {
+pipeline { 
 
     environment {
         dockerimagename = "anbarasu/hello-world"
@@ -71,5 +71,5 @@ pipeline {
     }   
   
   } */
-
+  }
 }

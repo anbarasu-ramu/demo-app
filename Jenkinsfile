@@ -61,7 +61,7 @@ pipeline {
 
          
 
-    }
+    }*/
 
     /*** workspace clean up*/
     post {
@@ -70,6 +70,6 @@ pipeline {
         }
     }   
   
-  } */
+  } 
 
 }

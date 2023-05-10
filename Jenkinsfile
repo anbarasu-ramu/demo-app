@@ -52,10 +52,7 @@ pipeline {
         steps {
             script{
           withKubeConfig([credentialsId: 'minikube', serverUrl: 'https://192.168.64.22:8443']) {
-                sh 'curl -LO "https://storage.googleapis.com/kubernetes-release/release/v1.27.1/bin/linux/amd64/kubectl"'  
-                sh 'chmod u+x ./kubectl'  
-                sh 'PATH=$PATH:$(pwd)'
-                sh 'echo $PATH'
+                sh 'whereis kubectl'
                 sh 'kubectl apply -f hello.yaml -n springboot'
             }
          }

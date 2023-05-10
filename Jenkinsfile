@@ -47,6 +47,18 @@ pipeline {
       }
     }
 
+    //
+        stage('Apply Kubernetes files') {
+        steps {
+            script{
+          withKubeConfig([credentialsId: 'minikube', serverUrl: 'https://192.168.64.21:8443']) {
+                sh 'kubectl apply -f hello.yaml -n springboot'
+            }
+         }
+      }
+    }
+    //
+
     }
 }     
    

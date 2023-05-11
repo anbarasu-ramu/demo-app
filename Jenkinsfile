@@ -58,7 +58,13 @@ pipeline {
          }
       }
     }
-    //
+    //helm deployment
+
+        stage('Helm Deployment') {
+        steps {
+         sh 'helm list'
+      }
+    }
 
     }
 }     

@@ -53,18 +53,18 @@ pipeline {
             script{
           withKubeConfig([credentialsId: 'minikube', serverUrl: 'https://192.168.64.22:8443']) {
                 sh 'whereis kubectl'
-                sh 'kubectl apply -f hello.yaml -n springboot'
+                sh 'kubectl apply -f deploy.yaml -n springboot'
             }
          }
       }
     }
     //helm deployment
 
-        stage('Helm Deployment') {
+     /*    stage('Helm Deployment') {
         steps {
          sh 'helm list'
       }
-    }
+    } */
 
     }
 }     

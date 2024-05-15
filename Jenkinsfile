@@ -8,10 +8,10 @@ pipeline {
 
     agent any
     stages{
-        stage('clone the repo'){
+        stage('checkout'){
             steps{
                git 'https://github.com/anbarasu-ramu/demo-app.git'
-               sh 'sh mvnw clean install'
+               // sh 'sh mvnw clean install'
             }
         }      
     
@@ -33,7 +33,7 @@ pipeline {
       }
     }
 
-     stage('Pushing Image') {
+     stage('Upload Image') {
 
       environment {
                registryCredential = 'docker-hub-login'
@@ -48,7 +48,7 @@ pipeline {
     }
 
     //
-        stage('Apply Kubernetes files') {
+        stage('Deploy') {
         steps {
             script{
           withKubeConfig([credentialsId: 'minikube', serverUrl: 'https://192.168.64.22:8443']) {
